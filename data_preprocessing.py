@@ -10,7 +10,7 @@ print(df.info())
 # 經過檢查以及比對，得知道有部分資料屬於數值類的資料，因此對他們做normalization
 # 由於其他欄位的值屬於nomial 或是 ordinal，因此判斷並不適合做normailzation
 # 以下提供適合做normalization的欄位。
-# BMI、MentHlth、PhysHlth
+# 'BMI','MentHlth','PhysHlth','Income', 'Education', 'Age', 'GenHlth'
 titles = df.keys()
 for title in titles:
     print('---front---')
@@ -19,7 +19,7 @@ for title in titles:
 # %%
 # 針對上面篩選出來的欄位做normalization
 # from sklearn.preprocessing import Normalizer
-
+# 發現使用normalization效果不好，因此轉用standardlizer
 from sklearn.preprocessing import StandardScaler
 # normalizer = Normalizer()
 stand = StandardScaler()
